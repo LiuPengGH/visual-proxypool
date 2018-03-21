@@ -1,0 +1,30 @@
+{% extends 'common/base.html' %}
+
+{% block title %}Proxy_list{% endblock %}
+
+{% block page_content %}
+    <h1>Proxy_List</h1>
+	<h3>The proxy count:{{ proxy_count }}</h3>
+    <table class="table table-bordered table-condensed">
+						<thead>
+							<tr>
+								<th>
+									Index
+								</th>
+								<th>
+									Proxy
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for p in proxy_list %}
+                                <tr>
+                                    <td>{{ proxy_list.index(p) }}</td>
+                                    <td>{{ p }}</td>
+                                </tr>
+                            {% endfor %}
+						</tbody>
+					</table>
+
+
+{% endblock %}
